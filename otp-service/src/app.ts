@@ -1,12 +1,10 @@
-import express from "express";
+import express, { Express } from "express";
+import otpRoutes from "./api/routes/otp-routes";
 
-const app = express();
-const port = 3000;
+const app: Express = express();
 
-app.get("/", (req, res) => {
-  res.send("hello world buda");
-});
+app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Hello world app listening on port ${port}`);
-});
+app.use("/otp", otpRoutes);
+
+export default app;

@@ -6,7 +6,14 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: development
+      REDIS_HOST: redis # This should match the service name below
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: npm start
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379" # Ensure this is a list
