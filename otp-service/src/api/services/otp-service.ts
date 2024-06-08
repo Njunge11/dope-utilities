@@ -82,6 +82,7 @@ export const handleOTPResult = async (
 };
 
 export const validateOtp = async (mobileNumber: string, otp: string) => {
+  console.log("a");
   const hashedOtp = hashOtp(otp);
   const result = await getOtp(mobileNumber);
   if (result) {
