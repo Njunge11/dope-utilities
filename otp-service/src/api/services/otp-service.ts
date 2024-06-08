@@ -2,20 +2,20 @@ import crypto, { createHash } from "crypto";
 import { getRedisClient } from "../../utils/redis-client";
 import { successResponse, errorResponse } from "../../utils/api-responses";
 
-const generateOtp = (otpLength: number = 4) => {
+export const generateOtp = (otpLength: number = 4) => {
   const maximum = parseInt("9".repeat(otpLength), 10);
   const minimum = parseInt("1" + "0".repeat(otpLength - 1), 10);
   const otp = crypto.randomInt(minimum, maximum + 1);
   return otp.toString();
 };
 
-const hashOtp = (otp: string) => {
+export const hashOtp = (otp: string) => {
   const hash = createHash("sha256");
   hash.update(otp);
   return hash.digest("hex");
 };
 
-const storeOtp = async (otp: string, mobileNumber: string) => {
+export const storeOtp = async (otp: string, mobileNumber: string) => {
   try {
     const client = await getRedisClient();
     const otpExists = await getOtp(mobileNumber);
@@ -55,11 +55,11 @@ export const processOtp = async (mobileNumber: string) => {
   }
 };
 
-const getOtp = async (mobileNumber: string) => {
+export const getOtp = async (mobileNumber: string) => {
   return await getRedisClient().hGet(mobileNumber, "otp");
 };
 
-const removeOtp = async (client: any, mobileNumber: string) => {
+export const removeOtp = async (client: any, mobileNumber: string) => {
   try {
     return await client.del(mobileNumber);
   } catch (error) {
@@ -67,7 +67,7 @@ const removeOtp = async (client: any, mobileNumber: string) => {
   }
 };
 
-const handleOTPResult = async (
+export const handleOTPResult = async (
   result: string,
   hashedOtp: string,
   mobileNumber: string
