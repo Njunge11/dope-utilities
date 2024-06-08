@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service/graph/badge.svg?token=2YYRTNKBJR)](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service)
 [![otp-service CI](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml/badge.svg)](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1a1640382c4ef44e1f55/maintainability)](https://codeclimate.com/github/Njunge11/dope-utilities/maintainability)
-![Author](https://img.shields.io/badge/author-Njunge11-blue)
+[![Author](https://img.shields.io/badge/created-by-Njungeching-blue)][https://twitter.com/Njungching]
 ![License](https://img.shields.io/github/license/Njunge11/dope-utilities)
 
 ## Description
