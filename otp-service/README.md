@@ -2,6 +2,8 @@
 
 [![codecov](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service/graph/badge.svg?token=2YYRTNKBJR)](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service)
 
+[![otp-service CI](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml/badge.svg)](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml)
+
 An OTP (One-Time Password) REST service designed to provide a secure, cloud-agnostic, and production-grade solution for applications requiring enhanced security for sensitive actions such as financial transactions or secure logins.
 
 ## Key Features
