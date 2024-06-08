@@ -1,6 +1,12 @@
 name: otp-service CI
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "otp-service/**"
+  pull_request:
+    paths:
+      - "otp-service/**"
 
 jobs:
   build:
