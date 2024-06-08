@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { processOtp, validateOtp } from "../services/otp-services";
+import { processOtp, validateOtp } from "../services/otp-service";
 
 export const sendOtp = async (req: Request, res: Response) => {
   const { mobileNumber } = req.body;

@@ -2,7 +2,7 @@ import crypto, { createHash } from "crypto";
 import { getRedisClient } from "../../utils/redis-client";
 import { successResponse, errorResponse } from "../../utils/api-responses";
 
-const generateOtp = (otpLength = 4) => {
+const generateOtp = (otpLength: number = 4) => {
   const maximum = parseInt("9".repeat(otpLength), 10);
   const minimum = parseInt("1" + "0".repeat(otpLength - 1), 10);
   const otp = crypto.randomInt(minimum, maximum + 1);
