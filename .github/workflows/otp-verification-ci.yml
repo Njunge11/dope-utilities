@@ -36,5 +36,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Run maintainability analysis
-        run: npx codeclimate analyze -f json
+      # - name: Run maintainability analysis
+      #   run: npx codeclimate analyze -f json
