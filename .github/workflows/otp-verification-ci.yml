@@ -36,5 +36,12 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      # - name: Run maintainability analysis
-      #   run: npx codeclimate analyze -f json
+      - name: Install Code Climate CLI
+        run: |
+          curl -L https://github.com/codeclimate/codeclimate/archive/latest.tar.gz -o codeclimate.tar.gz
+          tar -xzvf codeclimate.tar.gz
+          cd codeclimate-*
+          sudo make install
+
+      - name: Run Code Climate analysis
+        run: codeclimate analyze

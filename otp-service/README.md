@@ -2,7 +2,6 @@
 
 [![codecov](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service/graph/badge.svg?token=2YYRTNKBJR)](https://codecov.io/github/Njunge11/dope-utilities/tree/main/otp-service)
 [![otp-service CI](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml/badge.svg)](https://github.com/Njunge11/dope-utilities/actions/workflows/otp-verification-ci.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/your-otp-service-badge-id/maintainability)](https://codeclimate.com/github/Njunge11/dope-utilities/otp-service/maintainability)
 
 ## Description
 
