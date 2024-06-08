@@ -17,8 +17,11 @@ const hashOtp = (otp: string) => {
 
 const storeOtp = async (otp: string, mobileNumber: string) => {
   try {
-    // Some checks here - focus on the edge cases. Draw the flow chart
     const client = await getRedisClient();
+    const otpExists = await getOtp(mobileNumber);
+    if (otpExists) {
+      await removeOtp(client, mobileNumber);
+    }
     const result = await client.hSet(mobileNumber, {
       otp,
     });
@@ -56,9 +59,9 @@ const getOtp = async (mobileNumber: string) => {
   return await getRedisClient().hGet(mobileNumber, "otp");
 };
 
-const removeOtp = async (mobileNumber: string) => {
+const removeOtp = async (client: any, mobileNumber: string) => {
   try {
-    await getRedisClient().del(mobileNumber);
+    return await client.del(mobileNumber);
   } catch (error) {
     console.error("Error removing OTP record", error);
   }
@@ -70,7 +73,8 @@ const handleOTPResult = async (
   mobileNumber: string
 ) => {
   if (result === hashedOtp) {
-    await removeOtp(mobileNumber);
+    const client = getRedisClient();
+    await removeOtp(client, mobileNumber);
     return successResponse(200, "OTP Verification is Successful.");
   } else {
     return errorResponse("", "Invalid OTP.", 400, "OTP Provided is invalid.");
