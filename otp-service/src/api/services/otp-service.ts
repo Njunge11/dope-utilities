@@ -33,10 +33,6 @@ export const storeOtp = async (otp: string, mobileNumber: string) => {
   }
 };
 
-const sendOtp = (otp: string) => {
-  console.log("Time to send otp");
-};
-
 export const processOtp = async (mobileNumber: string) => {
   const otp = generateOtp();
   const hashedOtp = hashOtp(otp);
@@ -56,6 +52,7 @@ export const processOtp = async (mobileNumber: string) => {
 };
 
 export const getOtp = async (mobileNumber: string) => {
+  console.log("the result", await getRedisClient().hGet(mobileNumber, "otp"));
   return await getRedisClient().hGet(mobileNumber, "otp");
 };
 
@@ -82,7 +79,6 @@ export const handleOTPResult = async (
 };
 
 export const validateOtp = async (mobileNumber: string, otp: string) => {
-  console.log("a");
   const hashedOtp = hashOtp(otp);
   const result = await getOtp(mobileNumber);
   if (result) {
