@@ -1,5 +1,5 @@
 import express, { Express } from "express";
-import otpRoutes from "./api/routes/otp-routes";
+import otpRoutes from "./api/routes/otp-route";
 
 const app: Express = express();
 

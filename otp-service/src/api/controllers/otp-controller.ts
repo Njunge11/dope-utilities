@@ -12,3 +12,5 @@ export const verifyOtp = async (req: Request, res: Response) => {
   const response = await validateOtp(mobileNumber, otp);
   res.status(response.status).send(response);
 };
+
+export const test = () => {};

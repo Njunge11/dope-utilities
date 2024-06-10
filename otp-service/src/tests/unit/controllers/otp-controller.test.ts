@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { sendOtp, verifyOtp } from "../../../api/controllers/otp-controller";
 import { processOtp, validateOtp } from "../../../api/services/otp-service";
-import { mock } from "node:test";
 
 jest.mock("../../../api/services/otp-service");
 
