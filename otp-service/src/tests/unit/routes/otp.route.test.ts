@@ -13,18 +13,6 @@ app.use(express.json()); // Middleware to parse JSON bodies
 app.use("/otp", otpRoutes);
 
 describe("OTP Routes", () => {
-  it("should have otp routes", () => {
-    const routes = [
-      { path: "/send", method: "post" },
-      { path: "/verify", method: "post" },
-    ];
-
-    routes.map((route) => {
-      const match = otpRoutes.stack.find(
-        (s) => s.route.path === route.path && s.route.methods[route.nmethod]
-      );
-    });
-  });
   it("should call sendOtp controller method", async () => {
     const response = await request(app)
       .post("/otp/send")
