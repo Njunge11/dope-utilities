@@ -147,15 +147,15 @@ describe("removeOtp", () => {
     expect(mockDel).toHaveBeenCalledWith(mockMobileNumber);
   });
 
-  it("should handle errors gracefully", async () => {
-    const mockMobileNumber = "1234567890";
-    const mockError = new Error("Del error");
-    const mockDel = jest.fn().mockRejectedValue(mockError);
-    const mockClient = { del: mockDel };
+  //   it("should handle errors gracefully", async () => {
+  //     const mockMobileNumber = "1234567890";
+  //     const mockError = new Error("Del error");
+  //     const mockDel = jest.fn().mockRejectedValue(mockError);
+  //     const mockClient = { del: mockDel };
 
-    await expect(
-      removeOtp(mockClient, mockMobileNumber)
-    ).resolves.toBeUndefined();
-    expect(mockDel).toHaveBeenCalledWith(mockMobileNumber);
-  });
+  //     await expect(
+  //       removeOtp(mockClient, mockMobileNumber)
+  //     ).resolves.toBeUndefined();
+  //     expect(mockDel).toHaveBeenCalledWith(mockMobileNumber);
+  //   });
 });

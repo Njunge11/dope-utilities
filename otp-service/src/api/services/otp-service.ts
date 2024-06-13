@@ -52,7 +52,6 @@ export const processOtp = async (mobileNumber: string) => {
 };
 
 export const getOtp = async (mobileNumber: string) => {
-  console.log("the result", await getRedisClient().hGet(mobileNumber, "otp"));
   return await getRedisClient().hGet(mobileNumber, "otp");
 };
 
